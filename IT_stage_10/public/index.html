@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="hello.js"></script>
+    <script src="dbloader.js"></script>
+</head>
+
+<body>
+<div>
+    <p class="greeting-id">The ID is </p>
+    <p class="greeting-content">The content is </p>
+    <p>Base </p>
+    <p class="data-base"></p>
+    <input type="text" id="baseName" placeholder="Input base name">
+    <button onclick="loadBase()">Load base</button>
+
+    <p class="create-base">Create new base</p>
+    <input type="text" id="newBaseName" placeholder="Input base name">
+    <button onclick="createBase()">Create base</button>
+
+    <p class="remove-duplicates">Remove duplicates in the table</p>
+    <input type="text" id="targetBaseName" placeholder="Input base name">
+    <input type="text" id="targetTableName" placeholder="Input table name">
+    <button onclick="removeDuplicates()">Remove duplicates</button>
+</div>
+</body>
+</html>
