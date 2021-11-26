@@ -1,0 +1,43 @@
+syntax = "proto3";
+import "google/api/annotations.proto";
+option java_multiple_files = true;
+package com.it.grpc;
+
+message PingRequest {
+    string ping = 1;
+}
+message PongResponse {
+    string pong = 1;
+}
+service PingPongService {
+    rpc ping(PingRequest) returns (PongResponse);
+    rpc getBase(BaseGP) returns (BaseGP);
+    rpc postTable(TableGPD) returns (BaseGP);
+    rpc postRow(RowGP) returns (TableGPD);
+    rpc rmdp(TableGPD) returns (TableGPD);
+}
+message BaseGP{
+    string baseName = 1;
+    string baseContents = 2;
+}
+
+message TableScheme{
+    string attrTypes = 1;
+    repeated string attrNames = 2;
+}
+message TableRow{
+    repeated string row = 1;
+}
+
+message TableGPD{
+    string baseName = 1;
+    string tableName = 2;
+    TableScheme scheme = 3;
+    string tableContents = 4;
+}
+
+message RowGP{
+    string baseName = 1;
+    string tableName = 2;
+    TableRow entry = 3;
+}
